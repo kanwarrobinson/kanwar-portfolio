@@ -1,0 +1,227 @@
+{
+  "personal": {
+    "name": "Kanwar Robinson",
+    "title": "Software Development Engineer - II",
+    "role": "AI Engineer",
+    "company": "AppViewX",
+    "location": "Coimbatore, India",
+    "email": "kanwarrobinson.salethraja@gmail.com",
+    "phone": "+91 6382079802",
+    "tagline": "Building intelligent, production-ready AI systems that scale. From LangGraph multi-agent architectures to MCP servers published across Anthropic's ecosystem.",
+    "bio": [
+      "Software engineer at AppViewX who builds AI systems that serve real users. From a customer-facing multi-agent chatbot to an MCP server published across Anthropic's Marketplace, Claude Desktop, and Cursor.",
+      "Over 3+ years, I've architected LLM-driven backends with LangGraph, RAG, and Amazon Bedrock that run in production on Kubernetes at scale. Cut API response latency by 40%, deflected 35% of support tickets through automation, and built systems handling 1000+ concurrent users.",
+      "I work across the full stack — Python, FastAPI, Java, MongoDB, Kafka, Redis. But what drives me is shipping things that work in the real world, not just in demos."
+    ],
+    "social": {
+      "github": "https://github.com/kanwarrobinson",
+      "linkedin": "https://linkedin.com/in/kanwar-robinson",
+      "email": "mailto:kanwarrobinson.salethraja@gmail.com"
+    },
+    "resumeUrl": "/Kanwar_Resume_May_12_2026.pdf"
+  },
+  "terminal": {
+    "filename": "developer.js",
+    "lines": [
+      { "text": "// Software Engineer", "type": "comment" },
+      { "text": "const developer = {", "type": "keyword" },
+      { "text": "  name: 'Kanwar Robinson',", "type": "property" },
+      { "text": "  title: 'Software Developer - II',", "type": "property" },
+      { "text": "  skills: ['FastAPI', 'LangGraph', 'Kubernetes'],", "type": "property" },
+      { "text": "  focuses: ['AI/LLM', 'Microservices Architecture'],", "type": "property" },
+      { "text": "  learning: 'Always'", "type": "property" },
+      { "text": "};", "type": "keyword" }
+    ]
+  },
+  "stats": [
+    { "number": "3+", "label": "Years Experience" },
+    { "number": "40%", "label": "API Latency Reduced" },
+    { "number": "35%", "label": "Tickets Deflected" },
+    { "number": "14", "label": "MCP Tools Published" }
+  ],
+  "skills": [
+    {
+      "category": "LANGUAGES",
+      "items": [
+        { "name": "Python", "color": "#3776ab" },
+        { "name": "Java", "color": "#007396" },
+        { "name": "JavaScript", "color": "#339933" }
+      ]
+    },
+    {
+      "category": "AI/ML & LLMOps",
+      "items": [
+        { "name": "LangChain", "color": "#8b5cf6" },
+        { "name": "LangGraph", "color": "#8b5cf6" },
+        { "name": "RAG", "color": "#8b5cf6" },
+        { "name": "Amazon Bedrock", "color": "#ff9900" },
+        { "name": "OpenAI API", "color": "#10a37f" },
+        { "name": "Vector Stores", "color": "#8b5cf6" }
+      ]
+    },
+    {
+      "category": "BACKEND & FRAMEWORKS",
+      "items": [
+        { "name": "FastAPI", "color": "#009688" },
+        { "name": "Spring Boot", "color": "#6db33f" },
+        { "name": "Node.js", "color": "#339933" },
+        { "name": "Microservices", "color": "#8b5cf6" },
+        { "name": "REST APIs", "color": "#61dafb" }
+      ]
+    },
+    {
+      "category": "CLOUD & INFRASTRUCTURE",
+      "items": [
+        { "name": "AWS", "color": "#ff9900" },
+        { "name": "Kubernetes", "color": "#326ce5" },
+        { "name": "Docker", "color": "#2496ed" },
+        { "name": "Helm", "color": "#0f1689" },
+        { "name": "Jenkins", "color": "#d24939" },
+        { "name": "GitHub Actions", "color": "#2088ff" },
+        { "name": "Prometheus", "color": "#e6522c" },
+        { "name": "Grafana", "color": "#f46800" }
+      ]
+    },
+    {
+      "category": "DATA & MESSAGING",
+      "items": [
+        { "name": "MongoDB", "color": "#47a248" },
+        { "name": "Redis", "color": "#dc382d" },
+        { "name": "PostgreSQL", "color": "#336791" },
+        { "name": "Apache Kafka", "color": "#231f20" },
+        { "name": "Elasticsearch", "color": "#005571" }
+      ]
+    },
+    {
+      "category": "OTHER TOOLS",
+      "items": [
+        { "name": "Git", "color": "#f05032" },
+        { "name": "React", "color": "#61dafb" }
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "title": "Software Development Engineer - II",
+      "company": "AppViewX, Inc.",
+      "logo": "🔷",
+      "location": "Coimbatore, India",
+      "period": "Aug 2023 - Present",
+      "type": "Full-time",
+      "achievements": [
+        "Architected and published MCP server with 14 tools for Certificate Lifecycle Management across Anthropic's ecosystem",
+        "Led end-to-end development of production AI chatbot reducing support tickets by 35%",
+        "Built Checkpoint Service from scratch, certified for 1000 concurrent users",
+        "Refactored Python process to FastAPI microservice, reducing API latency by 40%",
+        "Optimized search inventory managing 20M records with millisecond response times"
+      ],
+      "tags": ["LangGraph", "Amazon Bedrock", "FastAPI", "Kubernetes", "Redis"]
+    },
+    {
+      "title": "Research & Development Intern",
+      "company": "AppViewX, Inc.",
+      "logo": "🔷",
+      "location": "Coimbatore, India",
+      "period": "Jan 2023 - Jul 2023",
+      "type": "Internship",
+      "achievements": [
+        "Built automated Expiry Alerts feature achieving 85% customer adoption in 3 months",
+        "Engineered live data streaming solution using Apache Kafka with ZooKeeper",
+        "Fastest feature adoption in company history"
+      ],
+      "tags": ["Java", "Spring Boot", "Apache Kafka", "MongoDB"]
+    },
+    {
+      "title": "Cybersecurity & Ethical Hacking Intern",
+      "company": "Talakunchi Networks",
+      "logo": "🔒",
+      "location": "Mumbai, India",
+      "period": "Jul 2020 - Aug 2020",
+      "type": "Internship",
+      "achievements": [
+        "Identified and exploited 15+ OWASP Top 10 vulnerabilities across 8 production applications",
+        "Developed Python scripts for automated server log analysis, reducing MTTD by 40%",
+        "Conducted penetration testing using Nmap, Burp Suite, and Metasploit",
+        "Eliminated 3 critical CVE-rated vulnerabilities within 2 weeks"
+      ],
+      "tags": ["Python", "Security", "Penetration Testing", "OWASP"]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Bachelor of Engineering (Mechanical Engineering)",
+      "institution": "Coimbatore Institute of Technology",
+      "logo": "🎓",
+      "location": "Coimbatore, India",
+      "period": "Jul 2019 - May 2023",
+      "gpa": "8.57/10",
+      "highlights": [
+        "Focused on AI/ML and Software Engineering",
+        "Built multiple production-grade projects",
+        "Active contributor to open-source AI projects"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "AppViewX MCP Server",
+      "description": "Published MCP server with 14 tools for Certificate Lifecycle Management with OAuth 2.0. Enables certificate automation via natural language through Claude Desktop, Cursor, and VS Code.",
+      "tags": ["MCP", "Python", "OAuth 2.0", "Anthropic", "FastAPI"],
+      "featured": true,
+      "impact": "Published across Anthropic's MCP Marketplace"
+    },
+    {
+      "title": "Multi-Agent AI Chatbot",
+      "description": "Production-grade customer-facing chatbot with LangGraph supervisor architecture. Reduced support tickets by 35% and handles 1000+ concurrent users.",
+      "tags": ["LangGraph", "Amazon Bedrock", "FastAPI", "Redis", "RAG"],
+      "featured": true,
+      "impact": "35% reduction in support tickets"
+    },
+    {
+      "title": "Checkpoint Service",
+      "description": "Built memory management service for AI chatbot from scratch. Handles short-term and long-term memory with message history, agent state, and tool call results.",
+      "tags": ["LangGraph", "Redis Stack", "Python", "Microservices"],
+      "featured": true,
+      "impact": "Certified for 1000 concurrent users"
+    },
+    {
+      "title": "Kubernetes Runtime Security Platform",
+      "description": "Comprehensive runtime security platform monitoring live workloads, enforcing policies through OPA/Gatekeeper, and detecting threats using Falco aligned with CIS benchmarks.",
+      "tags": ["Kubernetes", "Falco", "OPA", "Prometheus", "Grafana"],
+      "featured": true
+    },
+    {
+      "title": "Agentic AI Assistant",
+      "description": "Multi-agent chatbot with Agentic AI design patterns using LangGraph and RAG. Deployed on GKE with OpenTelemetry tracing and Prometheus/Grafana monitoring.",
+      "tags": ["LangGraph", "RAG", "Kubernetes", "Docker", "Helm"],
+      "featured": false
+    },
+    {
+      "title": "MongoDB Search Optimization",
+      "description": "Optimized AppViewX search inventory to manage 20 million records with millisecond response times using advanced query optimization.",
+      "tags": ["MongoDB", "Performance", "Query Optimization"],
+      "featured": false,
+      "impact": "Millisecond response for 20M records"
+    }
+  ],
+  "awards": [
+    {
+      "title": "Circle of Excellence",
+      "company": "AppViewX, Inc.",
+      "date": "July 2024",
+      "description": "Awarded for tackling key challenges in CERT+, including expiry alerts, onboarding streamlining, UI enhancements, infrastructure scaling, and driving product-led growth."
+    },
+    {
+      "title": "Engineer of the Month",
+      "company": "AppViewX, Inc.",
+      "date": "December 2024",
+      "description": "Awarded for implementing Redis Stack Server to enhance robust conversational memory and maintain state in the LLM engine."
+    },
+    {
+      "title": "Spot Award",
+      "company": "AppViewX, Inc.",
+      "date": "November 2023",
+      "description": "Recognized for efficiently implementing automated Expiry Alert workflows across Jira, Slack, ServiceNow, and CERT+ OOB roles, enhancing workflow automation."
+    }
+  ]
+}
