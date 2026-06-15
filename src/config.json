@@ -23,80 +23,203 @@
   "terminal": {
     "filename": "developer.js",
     "lines": [
-      { "text": "// Software Engineer", "type": "comment" },
-      { "text": "const developer = {", "type": "keyword" },
-      { "text": "  name: 'Kanwar Robinson',", "type": "property" },
-      { "text": "  title: 'Software Developer - II',", "type": "property" },
-      { "text": "  skills: ['FastAPI', 'LangGraph', 'Kubernetes'],", "type": "property" },
-      { "text": "  focuses: ['AI/LLM', 'Microservices Architecture'],", "type": "property" },
-      { "text": "  learning: 'Always'", "type": "property" },
-      { "text": "};", "type": "keyword" }
+      {
+        "text": "// Software Engineer",
+        "type": "comment"
+      },
+      {
+        "text": "const developer = {",
+        "type": "keyword"
+      },
+      {
+        "text": "  name: 'Kanwar Robinson',",
+        "type": "property"
+      },
+      {
+        "text": "  title: 'Software Developer - II',",
+        "type": "property"
+      },
+      {
+        "text": "  skills: ['FastAPI', 'LangGraph', 'Kubernetes'],",
+        "type": "property"
+      },
+      {
+        "text": "  focuses: ['AI/LLM', 'Microservices Architecture'],",
+        "type": "property"
+      },
+      {
+        "text": "  learning: 'Always'",
+        "type": "property"
+      },
+      {
+        "text": "};",
+        "type": "keyword"
+      }
     ]
   },
   "stats": [
-    { "number": "3+", "label": "Years Experience" },
-    { "number": "40%", "label": "API Latency Reduced" },
-    { "number": "35%", "label": "Tickets Deflected" },
-    { "number": "14", "label": "MCP Tools Published" }
+    {
+      "number": "3+",
+      "label": "Years Experience"
+    },
+    {
+      "number": "40%",
+      "label": "API Latency Reduced"
+    },
+    {
+      "number": "35%",
+      "label": "Tickets Deflected"
+    },
+    {
+      "number": "14",
+      "label": "MCP Tools Published"
+    }
   ],
   "skills": [
     {
       "category": "LANGUAGES",
       "items": [
-        { "name": "Python", "color": "#3776ab" },
-        { "name": "Java", "color": "#007396" },
-        { "name": "JavaScript", "color": "#339933" }
+        {
+          "name": "Python",
+          "color": "#3776ab"
+        },
+        {
+          "name": "Java",
+          "color": "#007396"
+        },
+        {
+          "name": "JavaScript",
+          "color": "#339933"
+        }
       ]
     },
     {
       "category": "AI/ML & LLMOps",
       "items": [
-        { "name": "LangChain", "color": "#8b5cf6" },
-        { "name": "LangGraph", "color": "#8b5cf6" },
-        { "name": "RAG", "color": "#8b5cf6" },
-        { "name": "Amazon Bedrock", "color": "#ff9900" },
-        { "name": "OpenAI API", "color": "#10a37f" },
-        { "name": "Vector Stores", "color": "#8b5cf6" }
+        {
+          "name": "LangChain",
+          "color": "#8b5cf6"
+        },
+        {
+          "name": "LangGraph",
+          "color": "#8b5cf6"
+        },
+        {
+          "name": "RAG",
+          "color": "#8b5cf6"
+        },
+        {
+          "name": "Amazon Bedrock",
+          "color": "#ff9900"
+        },
+        {
+          "name": "OpenAI API",
+          "color": "#10a37f"
+        },
+        {
+          "name": "Vector Stores",
+          "color": "#8b5cf6"
+        }
       ]
     },
     {
       "category": "BACKEND & FRAMEWORKS",
       "items": [
-        { "name": "FastAPI", "color": "#009688" },
-        { "name": "Spring Boot", "color": "#6db33f" },
-        { "name": "Node.js", "color": "#339933" },
-        { "name": "Microservices", "color": "#8b5cf6" },
-        { "name": "REST APIs", "color": "#61dafb" }
+        {
+          "name": "FastAPI",
+          "color": "#009688"
+        },
+        {
+          "name": "Spring Boot",
+          "color": "#6db33f"
+        },
+        {
+          "name": "Node.js",
+          "color": "#339933"
+        },
+        {
+          "name": "Microservices",
+          "color": "#8b5cf6"
+        },
+        {
+          "name": "REST APIs",
+          "color": "#61dafb"
+        }
       ]
     },
     {
       "category": "CLOUD & INFRASTRUCTURE",
       "items": [
-        { "name": "AWS", "color": "#ff9900" },
-        { "name": "Kubernetes", "color": "#326ce5" },
-        { "name": "Docker", "color": "#2496ed" },
-        { "name": "Helm", "color": "#0f1689" },
-        { "name": "Jenkins", "color": "#d24939" },
-        { "name": "GitHub Actions", "color": "#2088ff" },
-        { "name": "Prometheus", "color": "#e6522c" },
-        { "name": "Grafana", "color": "#f46800" }
+        {
+          "name": "AWS",
+          "color": "#ff9900"
+        },
+        {
+          "name": "Kubernetes",
+          "color": "#326ce5"
+        },
+        {
+          "name": "Docker",
+          "color": "#2496ed"
+        },
+        {
+          "name": "Helm",
+          "color": "#0f1689"
+        },
+        {
+          "name": "Jenkins",
+          "color": "#d24939"
+        },
+        {
+          "name": "GitHub Actions",
+          "color": "#2088ff"
+        },
+        {
+          "name": "Prometheus",
+          "color": "#e6522c"
+        },
+        {
+          "name": "Grafana",
+          "color": "#f46800"
+        }
       ]
     },
     {
       "category": "DATA & MESSAGING",
       "items": [
-        { "name": "MongoDB", "color": "#47a248" },
-        { "name": "Redis", "color": "#dc382d" },
-        { "name": "PostgreSQL", "color": "#336791" },
-        { "name": "Apache Kafka", "color": "#231f20" },
-        { "name": "Elasticsearch", "color": "#005571" }
+        {
+          "name": "MongoDB",
+          "color": "#47a248"
+        },
+        {
+          "name": "Redis",
+          "color": "#dc382d"
+        },
+        {
+          "name": "PostgreSQL",
+          "color": "#336791"
+        },
+        {
+          "name": "Apache Kafka",
+          "color": "#231f20"
+        },
+        {
+          "name": "Elasticsearch",
+          "color": "#005571"
+        }
       ]
     },
     {
       "category": "OTHER TOOLS",
       "items": [
-        { "name": "Git", "color": "#f05032" },
-        { "name": "React", "color": "#61dafb" }
+        {
+          "name": "Git",
+          "color": "#f05032"
+        },
+        {
+          "name": "React",
+          "color": "#61dafb"
+        }
       ]
     }
   ],
@@ -104,7 +227,7 @@
     {
       "title": "Software Development Engineer - II",
       "company": "AppViewX, Inc.",
-      "logo": "🔷",
+      "logo": "/images/companies/appviewx-logo.jpeg",
       "location": "Coimbatore, India",
       "period": "Aug 2023 - Present",
       "type": "Full-time",
@@ -115,12 +238,18 @@
         "Refactored Python process to FastAPI microservice, reducing API latency by 40%",
         "Optimized search inventory managing 20M records with millisecond response times"
       ],
-      "tags": ["LangGraph", "Amazon Bedrock", "FastAPI", "Kubernetes", "Redis"]
+      "tags": [
+        "LangGraph",
+        "Amazon Bedrock",
+        "FastAPI",
+        "Kubernetes",
+        "Redis"
+      ]
     },
     {
       "title": "Research & Development Intern",
       "company": "AppViewX, Inc.",
-      "logo": "🔷",
+      "logo": "/images/companies/appviewx-logo.jpeg",
       "location": "Coimbatore, India",
       "period": "Jan 2023 - Jul 2023",
       "type": "Internship",
@@ -129,12 +258,17 @@
         "Engineered live data streaming solution using Apache Kafka with ZooKeeper",
         "Fastest feature adoption in company history"
       ],
-      "tags": ["Java", "Spring Boot", "Apache Kafka", "MongoDB"]
+      "tags": [
+        "Java",
+        "Spring Boot",
+        "Apache Kafka",
+        "MongoDB"
+      ]
     },
     {
       "title": "Cybersecurity & Ethical Hacking Intern",
       "company": "Talakunchi Networks",
-      "logo": "🔒",
+      "logo": "/images/companies/talakunchi-logo.svg",
       "location": "Mumbai, India",
       "period": "Jul 2020 - Aug 2020",
       "type": "Internship",
@@ -144,7 +278,12 @@
         "Conducted penetration testing using Nmap, Burp Suite, and Metasploit",
         "Eliminated 3 critical CVE-rated vulnerabilities within 2 weeks"
       ],
-      "tags": ["Python", "Security", "Penetration Testing", "OWASP"]
+      "tags": [
+        "Python",
+        "Security",
+        "Penetration Testing",
+        "OWASP"
+      ]
     }
   ],
   "education": [
@@ -166,40 +305,73 @@
     {
       "title": "AppViewX MCP Server",
       "description": "Published MCP server with 14 tools for Certificate Lifecycle Management with OAuth 2.0. Enables certificate automation via natural language through Claude Desktop, Cursor, and VS Code.",
-      "tags": ["MCP", "Python", "OAuth 2.0", "Anthropic", "FastAPI"],
+      "tags": [
+        "MCP",
+        "Python",
+        "OAuth 2.0",
+        "Anthropic",
+        "FastAPI"
+      ],
       "featured": true,
       "impact": "Published across Anthropic's MCP Marketplace"
     },
     {
       "title": "Multi-Agent AI Chatbot",
       "description": "Production-grade customer-facing chatbot with LangGraph supervisor architecture. Reduced support tickets by 35% and handles 1000+ concurrent users.",
-      "tags": ["LangGraph", "Amazon Bedrock", "FastAPI", "Redis", "RAG"],
+      "tags": [
+        "LangGraph",
+        "Amazon Bedrock",
+        "FastAPI",
+        "Redis",
+        "RAG"
+      ],
       "featured": true,
       "impact": "35% reduction in support tickets"
     },
     {
       "title": "Checkpoint Service",
       "description": "Built memory management service for AI chatbot from scratch. Handles short-term and long-term memory with message history, agent state, and tool call results.",
-      "tags": ["LangGraph", "Redis Stack", "Python", "Microservices"],
+      "tags": [
+        "LangGraph",
+        "Redis Stack",
+        "Python",
+        "Microservices"
+      ],
       "featured": true,
       "impact": "Certified for 1000 concurrent users"
     },
     {
       "title": "Kubernetes Runtime Security Platform",
       "description": "Comprehensive runtime security platform monitoring live workloads, enforcing policies through OPA/Gatekeeper, and detecting threats using Falco aligned with CIS benchmarks.",
-      "tags": ["Kubernetes", "Falco", "OPA", "Prometheus", "Grafana"],
+      "tags": [
+        "Kubernetes",
+        "Falco",
+        "OPA",
+        "Prometheus",
+        "Grafana"
+      ],
       "featured": true
     },
     {
       "title": "Agentic AI Assistant",
       "description": "Multi-agent chatbot with Agentic AI design patterns using LangGraph and RAG. Deployed on GKE with OpenTelemetry tracing and Prometheus/Grafana monitoring.",
-      "tags": ["LangGraph", "RAG", "Kubernetes", "Docker", "Helm"],
+      "tags": [
+        "LangGraph",
+        "RAG",
+        "Kubernetes",
+        "Docker",
+        "Helm"
+      ],
       "featured": false
     },
     {
       "title": "MongoDB Search Optimization",
       "description": "Optimized AppViewX search inventory to manage 20 million records with millisecond response times using advanced query optimization.",
-      "tags": ["MongoDB", "Performance", "Query Optimization"],
+      "tags": [
+        "MongoDB",
+        "Performance",
+        "Query Optimization"
+      ],
       "featured": false,
       "impact": "Millisecond response for 20M records"
     }
