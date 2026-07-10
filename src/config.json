@@ -313,6 +313,7 @@
         "FastAPI"
       ],
       "featured": true,
+      "personal": false,
       "impact": "Published across Anthropic's MCP Marketplace"
     },
     {
@@ -326,6 +327,7 @@
         "RAG"
       ],
       "featured": true,
+      "personal": false,
       "impact": "35% reduction in support tickets"
     },
     {
@@ -338,6 +340,7 @@
         "Microservices"
       ],
       "featured": true,
+      "personal": false,
       "impact": "Certified for 1000 concurrent users"
     },
     {
@@ -350,7 +353,8 @@
         "Prometheus",
         "Grafana"
       ],
-      "featured": true
+      "featured": true,
+      "personal": true
     },
     {
       "title": "Agentic AI Assistant",
@@ -362,7 +366,8 @@
         "Docker",
         "Helm"
       ],
-      "featured": false
+      "featured": false,
+      "personal": true
     },
     {
       "title": "MongoDB Search Optimization",
@@ -373,6 +378,7 @@
         "Query Optimization"
       ],
       "featured": false,
+      "personal": false,
       "impact": "Millisecond response for 20M records"
     }
   ],

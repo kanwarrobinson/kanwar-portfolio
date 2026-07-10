@@ -1,5 +1,6 @@
 .contact-section {
   background: var(--bg-primary);
+  padding: 100px 0;
 }
 
 .contact-content {
@@ -132,6 +133,10 @@
 }
 
 @media (max-width: 768px) {
+  .contact-section {
+    padding: 60px 0;
+  }
+
   .contact-form {
     padding: 1.5rem;
   }

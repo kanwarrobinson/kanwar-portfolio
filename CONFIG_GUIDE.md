@@ -53,9 +53,6 @@ All components now fetch data from `config.json` instead of hardcoded values. To
 "stats": [
   { "number": "3+", "label": "Years Experience" },
   { "number": "50+", "label": "Projects" }
-]
-```
-
 ### 4. Skills
 ```json
 "skills": [
@@ -92,6 +89,7 @@ All components now fetch data from `config.json` instead of hardcoded values. To
     "description": "Description...",
     "tags": ["Tech1", "Tech2"],
     "featured": true,
+    "personal": false,
     "impact": "Impact metric"
   }
 ]

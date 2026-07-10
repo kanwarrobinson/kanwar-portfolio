@@ -1,5 +1,6 @@
 .projects-section {
   background: var(--bg-primary);
+  padding: 100px 0;
 }
 
 .projects-grid {
@@ -45,22 +46,43 @@
   background: linear-gradient(135deg, var(--bg-secondary) 0%, rgba(139, 92, 246, 0.05) 100%);
 }
 
-.featured-badge {
+.project-badges {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background: var(--accent-gradient);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  max-width: calc(100% - 2rem);
+  z-index: 1;
+}
+
+.project-badge {
   color: white;
-  padding: 0.5rem 1rem;
+  padding: 0.45rem 0.85rem;
   border-radius: 20px;
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  line-height: 1;
+}
+
+.featured-badge {
+  background: var(--accent-gradient);
+}
+
+.personal-badge {
+  background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
 }
 
 .project-content {
   margin-top: 0.5rem;
+}
+
+.project-card.has-badges .project-content {
+  padding-top: 2.25rem;
 }
 
 .project-title {
@@ -117,6 +139,10 @@
 }
 
 @media (max-width: 768px) {
+  .projects-section {
+    padding: 60px 0;
+  }
+
   .projects-grid {
     grid-template-columns: 1fr;
   }

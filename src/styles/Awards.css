@@ -1,5 +1,6 @@
 .awards-section {
   background: var(--bg-secondary);
+  padding: 100px 0;
 }
 
 .awards-grid {
@@ -76,6 +77,10 @@
 }
 
 @media (max-width: 768px) {
+  .awards-section {
+    padding: 60px 0;
+  }
+
   .awards-grid {
     grid-template-columns: 1fr;
   }
