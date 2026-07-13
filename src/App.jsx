@@ -9,7 +9,6 @@ import Awards from './components/Awards'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import ParticlesBackground from './components/ParticlesBackground'
-import ScrollToTop from './components/ScrollToTop'
 import ChatBot from './components/Chatbot/ChatBot'
 import './styles/App.css'
 
@@ -36,7 +35,6 @@ function App() {
       <Awards />
       <Contact />
       <Footer />
-      <ScrollToTop />
       <ChatBot theme={theme} />
     </div>
   )
