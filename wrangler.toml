@@ -1,0 +1,11 @@
+name = "portfolio"
+main = "public/_worker.js"
+compatibility_date = "2026-07-10"
+
+[site]
+bucket = "./dist"
+
+# Environment variables (for local development)
+# Add your actual key here or use wrangler secret
+[vars]
+# OPENAI_API_KEY = "your-key-here"  # Don't commit secrets!
