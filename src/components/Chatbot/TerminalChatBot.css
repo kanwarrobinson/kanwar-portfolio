@@ -1,0 +1,347 @@
+/* Terminal Chatbot Overlay - Fullscreen */
+.terminal-chatbot-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.terminal-chatbot-container {
+  width: 100%;
+  max-width: 1200px;
+  height: 90vh;
+  background: #0a0a0a;
+  border: 2px solid #00ff00;
+  border-radius: 8px;
+  box-shadow: 0 0 50px rgba(0, 255, 0, 0.3),
+              inset 0 0 100px rgba(0, 255, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: 'Courier New', 'Monaco', 'Consolas', monospace;
+}
+
+/* Terminal Header */
+.terminal-header {
+  background: linear-gradient(180deg, #1a1a1a 0%, #0f0f0f 100%);
+  border-bottom: 1px solid #00ff00;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 10px rgba(0, 255, 0, 0.2);
+}
+
+.terminal-window-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.terminal-btn {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 255, 0, 0.5);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: #00ff00;
+  padding: 0;
+}
+
+.terminal-btn.close {
+  background: #ff5555;
+  border-color: #ff5555;
+}
+
+.terminal-btn.minimize {
+  background: #ffcc00;
+  border-color: #ffcc00;
+}
+
+.terminal-btn.maximize {
+  background: #00ff00;
+  border-color: #00ff00;
+}
+
+.terminal-btn:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 10px currentColor;
+}
+
+.terminal-title {
+  color: #00ff00;
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-shadow: 0 0 10px #00ff00;
+}
+
+/* Terminal Banner */
+.terminal-banner {
+  background: #0a0a0a;
+  border-bottom: 1px solid #00ff00;
+  padding: 20px;
+  color: #00ff00;
+}
+
+.terminal-ascii {
+  font-size: 10px;
+  line-height: 1.2;
+  color: #00ff00;
+  margin: 0;
+  text-shadow: 0 0 5px #00ff00;
+  animation: glitch 3s infinite;
+}
+
+@keyframes glitch {
+  0%, 90%, 100% {
+    opacity: 1;
+  }
+  92%, 94%, 96% {
+    opacity: 0.8;
+  }
+}
+
+.terminal-welcome {
+  margin: 10px 0 5px;
+  font-size: 14px;
+  color: #00ff00;
+}
+
+.terminal-info {
+  margin: 5px 0 0;
+  font-size: 12px;
+  color: #00aa00;
+}
+
+/* Terminal Messages */
+.terminal-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  background: #000000;
+  color: #00ff00;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.terminal-messages::-webkit-scrollbar {
+  width: 8px;
+}
+
+.terminal-messages::-webkit-scrollbar-track {
+  background: #0a0a0a;
+  border-left: 1px solid #00ff00;
+}
+
+.terminal-messages::-webkit-scrollbar-thumb {
+  background: #00ff00;
+  border-radius: 4px;
+}
+
+.terminal-messages::-webkit-scrollbar-thumb:hover {
+  background: #00cc00;
+  box-shadow: 0 0 10px #00ff00;
+}
+
+.terminal-message {
+  margin-bottom: 20px;
+  animation: terminalFadeIn 0.3s ease-out;
+}
+
+@keyframes terminalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.terminal-prompt {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.terminal-prompt-user {
+  color: #00ff00;
+}
+
+.terminal-prompt-kanwar {
+  color: #00aaff;
+  text-shadow: 0 0 5px #00aaff;
+}
+
+.terminal-prompt-separator {
+  color: #888;
+}
+
+.terminal-prompt-path {
+  color: #ffaa00;
+}
+
+.terminal-prompt-symbol {
+  color: #00ff00;
+  margin-left: 2px;
+}
+
+.terminal-message-content {
+  padding-left: 20px;
+  color: #e0e0e0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.terminal-message-user .terminal-message-content {
+  color: #00ff00;
+}
+
+.terminal-message-assistant .terminal-message-content {
+  color: #00ddff;
+}
+
+.terminal-message-error .terminal-message-content {
+  color: #ff5555;
+  animation: errorBlink 0.5s ease-in-out 3;
+}
+
+@keyframes errorBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.terminal-loading {
+  color: #00ff00;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.terminal-cursor {
+  animation: cursorBlink 1s step-end infinite;
+}
+
+@keyframes cursorBlink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+/* Terminal Input */
+.terminal-input-form {
+  background: #0a0a0a;
+  border-top: 1px solid #00ff00;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.terminal-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #00ff00;
+  font-family: 'Courier New', 'Monaco', 'Consolas', monospace;
+  font-size: 14px;
+  caret-color: #00ff00;
+}
+
+.terminal-input::placeholder {
+  color: #005500;
+}
+
+.terminal-input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Floating Terminal Button */
+.terminal-chat-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #000;
+  border: 2px solid #00ff00;
+  color: #00ff00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.5),
+              inset 0 0 20px rgba(0, 255, 0, 0.1);
+  z-index: 9999;
+  transition: all 0.3s ease;
+  animation: terminalPulse 2s ease-in-out infinite;
+}
+
+@keyframes terminalPulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5),
+                inset 0 0 20px rgba(0, 255, 0, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 255, 0, 0.8),
+                inset 0 0 30px rgba(0, 255, 0, 0.2);
+  }
+}
+
+.terminal-chat-toggle:hover {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 0 40px rgba(0, 255, 0, 0.8),
+              inset 0 0 30px rgba(0, 255, 0, 0.2);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .terminal-chatbot-overlay {
+    padding: 0;
+  }
+
+  .terminal-chatbot-container {
+    width: 100vw;
+    height: 100vh;
+    max-width: none;
+    border-radius: 0;
+    border: none;
+  }
+
+  .terminal-ascii {
+    font-size: 8px;
+  }
+
+  .terminal-messages {
+    font-size: 13px;
+  }
+
+  .terminal-chat-toggle {
+    width: 50px;
+    height: 50px;
+    bottom: 15px;
+    right: 15px;
+  }
+}

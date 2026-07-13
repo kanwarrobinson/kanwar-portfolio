@@ -9,7 +9,7 @@ import Awards from './components/Awards'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import ParticlesBackground from './components/ParticlesBackground'
-import ChatBot from './components/Chatbot/ChatBot'
+import ChatBot from './components/Chatbot/TerminalChatBot'
 import './styles/App.css'
 
 function App() {
