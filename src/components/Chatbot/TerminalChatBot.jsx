@@ -189,10 +189,23 @@ const TerminalChatBot = ({ theme }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (input.trim() && !isLoading) {
-      sendMessage(input.trim());
+    const trimmedInput = input.trim();
+    if (!trimmedInput || isLoading) return;
+
+    if (trimmedInput.toLowerCase() === 'clear') {
+      clearChat();
       setInput('');
+      return;
     }
+
+    if (trimmedInput.toLowerCase() === 'exit' || trimmedInput.toLowerCase() === 'shutdown') {
+      setIsOpen(false);
+      setInput('');
+      return;
+    }
+
+    sendMessage(trimmedInput);
+    setInput('');
   };
 
   const clearChat = () => {
