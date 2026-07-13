@@ -214,36 +214,36 @@ const TerminalChatBot = ({ theme }) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="terminal-chatbot-overlay"
+            className="chat-terminal-chatbot-overlay"
           >
             <motion.div
               initial={{ scale: 0.95, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="terminal-chatbot-container"
+              className="chat-terminal-chatbot-container"
             >
               {/* Terminal Header */}
-              <div className="terminal-header">
-                <div className="terminal-window-buttons">
-                  <button className="terminal-btn close" onClick={() => setIsOpen(false)} title="Close">
+              <div className="chat-terminal-header">
+                <div className="chat-terminal-window-buttons">
+                  <button className="chat-terminal-btn close" onClick={() => setIsOpen(false)} title="Close">
                     <FiX />
                   </button>
-                  <button className="terminal-btn minimize" onClick={clearChat} title="Clear">
+                  <button className="chat-terminal-btn minimize" onClick={clearChat} title="Clear">
                     <FiDownload />
                   </button>
-                  <button className="terminal-btn maximize" onClick={exportChat} title="Export">
+                  <button className="chat-terminal-btn maximize" onClick={exportChat} title="Export">
                     <FiDownload />
                   </button>
                 </div>
-                <div className="terminal-title">
+                <div className="chat-terminal-title">
                   <FiTerminal /> kanwar@portfolio ~ Talk to Kanwar
                 </div>
               </div>
 
               {/* Terminal Banner */}
-              <div className="terminal-banner">
-                <pre className="terminal-ascii">
+              <div className="chat-terminal-banner">
+                <pre className="chat-terminal-ascii">
 {`
  _  __
 | |/ /__ _ _ ____      ____ _ _ __
@@ -252,54 +252,54 @@ const TerminalChatBot = ({ theme }) => {
 |_|\\_\\__,_|_| |_|\\_/\\_/ \\__,_|_|
 `}
                 </pre>
-                <p className="terminal-welcome">
+                <p className="chat-terminal-welcome">
                   Welcome to Kanwar's Terminal Chat Interface
                 </p>
-                <p className="terminal-info">
+                <p className="chat-terminal-info">
                   Type your questions below • AI Engineer @ AppViewX • {messageCount}/{MAX_MESSAGES_PER_SESSION} messages used
                 </p>
               </div>
 
               {/* Terminal Messages */}
-              <div className="terminal-messages">
+              <div className="chat-terminal-messages">
                 {messages.map((message, index) => (
-                  <div key={index} className={`terminal-message terminal-message-${message.role}`}>
+                  <div key={index} className={`chat-terminal-message chat-terminal-message-${message.role}`}>
                     {message.role === 'user' && (
-                      <div className="terminal-prompt">
-                        <span className="terminal-prompt-user">visitor@portfolio</span>
-                        <span className="terminal-prompt-separator">:</span>
-                        <span className="terminal-prompt-path">~</span>
-                        <span className="terminal-prompt-symbol">$</span>
+                      <div className="chat-terminal-prompt">
+                        <span className="chat-terminal-prompt-user">visitor@portfolio</span>
+                        <span className="chat-terminal-prompt-separator">:</span>
+                        <span className="chat-terminal-prompt-path">~</span>
+                        <span className="chat-terminal-prompt-symbol">$</span>
                       </div>
                     )}
                     {message.role === 'assistant' && (
-                      <div className="terminal-prompt">
-                        <span className="terminal-prompt-user terminal-prompt-kanwar">kanwar@appviewx</span>
-                        <span className="terminal-prompt-separator">:</span>
-                        <span className="terminal-prompt-path">~</span>
-                        <span className="terminal-prompt-symbol">&gt;</span>
+                      <div className="chat-terminal-prompt">
+                        <span className="chat-terminal-prompt-user chat-terminal-prompt-kanwar">kanwar@appviewx</span>
+                        <span className="chat-terminal-prompt-separator">:</span>
+                        <span className="chat-terminal-prompt-path">~</span>
+                        <span className="chat-terminal-prompt-symbol">&gt;</span>
                       </div>
                     )}
-                    <div className="terminal-message-content">
+                    <div className="chat-terminal-message-content">
                       {message.content}
                     </div>
                   </div>
                 ))}
                 {isLoading && (
-                  <div className="terminal-loading">
-                    <span className="terminal-cursor">▋</span> Kanwar is typing...
+                  <div className="chat-terminal-loading">
+                    <span className="chat-terminal-cursor">▋</span> Kanwar is typing...
                   </div>
                 )}
                 <div ref={messagesEndRef} />
               </div>
 
               {/* Terminal Input */}
-              <form className="terminal-input-form" onSubmit={handleSubmit}>
-                <div className="terminal-prompt">
-                  <span className="terminal-prompt-user">visitor@portfolio</span>
-                  <span className="terminal-prompt-separator">:</span>
-                  <span className="terminal-prompt-path">~</span>
-                  <span className="terminal-prompt-symbol">$</span>
+              <form className="chat-terminal-input-form" onSubmit={handleSubmit}>
+                <div className="chat-terminal-prompt">
+                  <span className="chat-terminal-prompt-user">visitor@portfolio</span>
+                  <span className="chat-terminal-prompt-separator">:</span>
+                  <span className="chat-terminal-prompt-path">~</span>
+                  <span className="chat-terminal-prompt-symbol">$</span>
                 </div>
                 <input
                   ref={inputRef}
@@ -308,7 +308,7 @@ const TerminalChatBot = ({ theme }) => {
                   onChange={(e) => setInput(e.target.value)}
                   disabled={isLoading || messageCount >= MAX_MESSAGES_PER_SESSION}
                   placeholder="Type your message..."
-                  className="terminal-input"
+                  className="chat-terminal-input"
                   autoFocus
                 />
               </form>
@@ -323,7 +323,7 @@ const TerminalChatBot = ({ theme }) => {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           onClick={() => setIsOpen(true)}
-          className="terminal-chat-toggle"
+          className="chat-terminal-chat-toggle"
         >
           <FiTerminal size={24} />
         </motion.button>
