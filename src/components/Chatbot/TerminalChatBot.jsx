@@ -55,15 +55,15 @@ const TerminalChatBot = ({ theme }) => {
     if (!isOpen) return undefined;
 
     const handleKeyDown = (event) => {
-      if (event.key === Escape) {
+      if (event.key === "Escape") {
         setIsOpen(false);
       }
     };
 
-    window.addEventListener(keydown, handleKeyDown);
+    window.addEventListener("keydown", handleKeyDown);
 
     return () => {
-      window.removeEventListener(keydown, handleKeyDown);
+      window.removeEventListener("keydown", handleKeyDown);
     };
   }, [isOpen]);
 
