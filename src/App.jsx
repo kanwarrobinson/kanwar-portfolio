@@ -10,6 +10,7 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import ParticlesBackground from './components/ParticlesBackground'
 import ScrollToTop from './components/ScrollToTop'
+import ChatBot from './components/Chatbot/ChatBot'
 import './styles/App.css'
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
       <Contact />
       <Footer />
       <ScrollToTop />
+      <ChatBot theme={theme} />
     </div>
   )
 }
