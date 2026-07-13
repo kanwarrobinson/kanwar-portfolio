@@ -9,3 +9,11 @@ bucket = "./dist"
 # Add your actual key here or use wrangler secret
 [vars]
 # OPENAI_API_KEY = "your-key-here"  # Don't commit secrets!
+
+# Observability configuration
+[observability]
+enabled = true
+
+[observability.logs]
+enabled = true
+invocation_logs = true
