@@ -107,24 +107,24 @@ OTHER TOOLS: Git, React
 Remember: You represent Kanwar professionally. Be helpful, informative, and always accurate based on the information provided above.`;
 }
 
-export async function onRequestPost(context) {
-  const { request, env } = context;
+async function handleChatRequest(request, env) {
+  if (request.method !== 'POST') {
+    return new Response('Method not allowed', { status: 405 });
+  }
+
+  if (!env.OPENAI_API_KEY) {
+    return new Response(JSON.stringify({
+      error: 'OpenAI API key not configured'
+    }), {
+      status: 500,
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+      }
+    });
+  }
 
   try {
-    // Check for API key
-    if (!env.OPENAI_API_KEY) {
-      return new Response(JSON.stringify({
-        error: 'OpenAI API key not configured'
-      }), {
-        status: 500,
-        headers: {
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': '*'
-        }
-      });
-    }
-
-    // Parse request body
     const { messages } = await request.json();
 
     if (!messages || !Array.isArray(messages)) {
@@ -139,14 +139,12 @@ export async function onRequestPost(context) {
       });
     }
 
-    // Build system prompt and prepare messages
     const systemPrompt = buildSystemPrompt();
     const openaiMessages = [
       { role: 'system', content: systemPrompt },
       ...messages.slice(-10)
     ];
 
-    // Call OpenAI API
     const openaiResponse = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
       headers: {
@@ -176,7 +174,6 @@ export async function onRequestPost(context) {
       });
     }
 
-    // Return streaming response
     return new Response(openaiResponse.body, {
       headers: {
         'Content-Type': 'text/event-stream',
@@ -203,13 +200,27 @@ export async function onRequestPost(context) {
   }
 }
 
-// Handle CORS preflight
-export async function onRequestOptions() {
-  return new Response(null, {
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'POST, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type',
+export default {
+  async fetch(request, env, ctx) {
+    const url = new URL(request.url);
+
+    // Handle CORS preflight
+    if (request.method === 'OPTIONS') {
+      return new Response(null, {
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+          'Access-Control-Allow-Headers': 'Content-Type',
+        }
+      });
     }
-  });
-}
+
+    // Handle API chat endpoint
+    if (url.pathname === '/api/chat') {
+      return handleChatRequest(request, env);
+    }
+
+    // Serve static assets for all other requests
+    return env.ASSETS.fetch(request);
+  }
+};
