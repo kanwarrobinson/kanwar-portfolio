@@ -306,28 +306,24 @@ const TerminalChatBot = ({ theme }) => {
                     <span className="chat-terminal-cursor">▋</span> Kanwar is typing...
                   </div>
                 )}
-                <div ref={messagesEndRef} />
-              </div>
-
-              {/* Terminal Input */}
-              <form className="chat-terminal-input-form" onSubmit={handleSubmit}>
-                <div className="chat-terminal-prompt">
+                <form className="chat-terminal-inline-input-form" onSubmit={handleSubmit}>
                   <span className="chat-terminal-prompt-user">visitor@portfolio</span>
                   <span className="chat-terminal-prompt-separator">:</span>
                   <span className="chat-terminal-prompt-path">~</span>
                   <span className="chat-terminal-prompt-symbol">$</span>
-                </div>
-                <input
-                  ref={inputRef}
-                  type="text"
-                  value={input}
-                  onChange={(e) => setInput(e.target.value)}
-                  disabled={isLoading || messageCount >= MAX_MESSAGES_PER_SESSION}
-                  placeholder="Type your message..."
-                  className="chat-terminal-input"
-                  autoFocus
-                />
-              </form>
+                  <input
+                    ref={inputRef}
+                    type="text"
+                    value={input}
+                    onChange={(e) => setInput(e.target.value)}
+                    disabled={isLoading || messageCount >= MAX_MESSAGES_PER_SESSION}
+                    placeholder="type your message..."
+                    className="chat-terminal-inline-input"
+                    autoFocus
+                  />
+                </form>
+                <div ref={messagesEndRef} />
+              </div>
             </motion.div>
           </motion.div>
         )}
