@@ -17,6 +17,16 @@ const TerminalChatBot = ({ theme }) => {
   const inputRef = useRef(null);
   const abortControllerRef = useRef(null);
 
+  const focusTerminalInput = () => {
+    if (!isOpen || isLoading || messageCount >= MAX_MESSAGES_PER_SESSION || !inputRef.current) {
+      return;
+    }
+
+    inputRef.current.focus({ preventScroll: true });
+    const inputLength = inputRef.current.value.length;
+    inputRef.current.setSelectionRange(inputLength, inputLength);
+  };
+
   useEffect(() => {
     const savedMessages = localStorage.getItem(STORAGE_KEY);
     if (savedMessages) {
@@ -46,10 +56,19 @@ const TerminalChatBot = ({ theme }) => {
 
   useEffect(() => {
     scrollToBottom();
-    if (isOpen && inputRef.current) {
-      inputRef.current.focus();
-    }
   }, [messages, isOpen]);
+
+  useEffect(() => {
+    if (!isOpen) return undefined;
+
+    const frameId = requestAnimationFrame(focusTerminalInput);
+    const timeoutId = setTimeout(focusTerminalInput, 180);
+
+    return () => {
+      cancelAnimationFrame(frameId);
+      clearTimeout(timeoutId);
+    };
+  }, [isOpen, isLoading, messageCount]);
 
   useEffect(() => {
     if (!isOpen) return undefined;
@@ -250,6 +269,7 @@ const TerminalChatBot = ({ theme }) => {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
               transition={{ duration: 0.2 }}
+              onAnimationComplete={focusTerminalInput}
               className="chat-terminal-chatbot-container"
             >
               {/* Terminal Header */}
