@@ -221,7 +221,8 @@ export default {
       return handleChatRequest(request, env);
     }
 
-    // Serve static assets for all other requests
-    return env.ASSETS.fetch(request);
+    // For all other requests, Cloudflare will automatically serve from assets directory
+    // Just pass through - no need to call env.ASSETS
+    return fetch(request);
   }
 };
