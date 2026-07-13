@@ -1,11 +1,11 @@
 .chatbot-container {
   position: fixed;
-  bottom: 90px;
+  bottom: 20px;
   right: 20px;
+  top: 20px;
   width: 400px;
   max-width: calc(100vw - 40px);
-  height: 600px;
-  max-height: calc(100vh - 120px);
+  height: auto;
   background: var(--card-bg);
   border-radius: 16px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
@@ -215,18 +215,19 @@
   transform: translateY(-2px);
 }
 
+/* Hide the toggle button when chat is open */
 .chatbot-toggle.open {
-  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
-  box-shadow: 0 4px 16px rgba(239, 68, 68, 0.4);
+  display: none;
 }
 
 @media (max-width: 768px) {
   .chatbot-container {
     right: 10px;
-    bottom: 80px;
-    width: calc(100vw - 20px);
-    height: calc(100vh - 100px);
-    max-height: calc(100vh - 100px);
+    left: 10px;
+    top: 10px;
+    bottom: 10px;
+    width: auto;
+    max-width: none;
   }
 
   .chatbot-toggle {
