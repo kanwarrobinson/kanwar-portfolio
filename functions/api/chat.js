@@ -1,6 +1,3 @@
-const RATE_LIMIT_PER_IP = 30;
-const RATE_LIMIT_WINDOW = 24 * 60 * 60 * 1000;
-
 function buildSystemPrompt() {
   return `You are Kanwar Robinson's AI assistant on his portfolio website. Your role is to help visitors learn about Kanwar's background, experience, and skills in a professional yet approachable manner.
 
@@ -110,23 +107,24 @@ OTHER TOOLS: Git, React
 Remember: You represent Kanwar professionally. Be helpful, informative, and always accurate based on the information provided above.`;
 }
 
-async function handleChatRequest(request, env) {
-  if (request.method !== 'POST') {
-    return new Response('Method not allowed', { status: 405 });
-  }
-
-  if (!env.OPENAI_API_KEY) {
-    return new Response(JSON.stringify({
-      error: 'OpenAI API key not configured'
-    }), {
-      status: 500,
-      headers: { 'Content-Type': 'application/json' }
-    });
-  }
-
-  const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
+export async function onRequestPost(context) {
+  const { request, env } = context;
 
   try {
+    // Check for API key
+    if (!env.OPENAI_API_KEY) {
+      return new Response(JSON.stringify({
+        error: 'OpenAI API key not configured'
+      }), {
+        status: 500,
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*'
+        }
+      });
+    }
+
+    // Parse request body
     const { messages } = await request.json();
 
     if (!messages || !Array.isArray(messages)) {
@@ -134,17 +132,21 @@ async function handleChatRequest(request, env) {
         error: 'Invalid request format'
       }), {
         status: 400,
-        headers: { 'Content-Type': 'application/json' }
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*'
+        }
       });
     }
 
+    // Build system prompt and prepare messages
     const systemPrompt = buildSystemPrompt();
-
     const openaiMessages = [
       { role: 'system', content: systemPrompt },
       ...messages.slice(-10)
     ];
 
+    // Call OpenAI API
     const openaiResponse = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
       headers: {
@@ -167,10 +169,14 @@ async function handleChatRequest(request, env) {
         error: 'Failed to generate response'
       }), {
         status: 500,
-        headers: { 'Content-Type': 'application/json' }
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*'
+        }
       });
     }
 
+    // Return streaming response
     return new Response(openaiResponse.body, {
       headers: {
         'Content-Type': 'text/event-stream',
@@ -185,32 +191,25 @@ async function handleChatRequest(request, env) {
   } catch (error) {
     console.error('Chat error:', error);
     return new Response(JSON.stringify({
-      error: 'Internal server error'
+      error: 'Internal server error',
+      details: error.message
     }), {
       status: 500,
-      headers: { 'Content-Type': 'application/json' }
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+      }
     });
   }
 }
 
-export default {
-  async fetch(request, env, ctx) {
-    const url = new URL(request.url);
-
-    if (request.method === 'OPTIONS') {
-      return new Response(null, {
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Methods': 'POST, OPTIONS',
-          'Access-Control-Allow-Headers': 'Content-Type',
-        }
-      });
+// Handle CORS preflight
+export async function onRequestOptions() {
+  return new Response(null, {
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'POST, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type',
     }
-
-    if (url.pathname === '/api/chat') {
-      return handleChatRequest(request, env);
-    }
-
-    return env.ASSETS.fetch(request);
-  }
-};
+  });
+}
