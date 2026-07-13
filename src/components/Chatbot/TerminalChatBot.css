@@ -163,6 +163,17 @@
   animation: terminalFadeIn 0.3s ease-out;
 }
 
+.chat-terminal-message-user {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.chat-terminal-message-user .chat-terminal-prompt {
+  margin-bottom: 0;
+  flex-shrink: 0;
+}
+
 @keyframes terminalFadeIn {
   from {
     opacity: 0;
@@ -212,6 +223,9 @@
 
 .chat-terminal-message-user .chat-terminal-message-content {
   color: #ffffff;
+  padding-left: 0;
+  flex: 1;
+  min-width: 0;
 }
 
 .chat-terminal-message-assistant .chat-terminal-message-content {
@@ -273,6 +287,33 @@
 }
 
 .chat-terminal-input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.chat-terminal-inline-input-form {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.chat-terminal-inline-input {
+  flex: 1;
+  min-width: 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-family: 'Courier New', 'Monaco', 'Consolas', monospace;
+  font-size: 14px;
+  caret-color: #ffffff;
+}
+
+.chat-terminal-inline-input::placeholder {
+  color: #7a7a7a;
+}
+
+.chat-terminal-inline-input:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
