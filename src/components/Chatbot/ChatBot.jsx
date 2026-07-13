@@ -38,7 +38,7 @@ const ChatBot = ({ theme }) => {
     } else {
       const welcomeMessage = {
         role: 'assistant',
-        content: "👋 Hi! I'm Kanwar's AI assistant. I can tell you about his experience building production AI systems, his tech stack, projects, or anything else you'd like to know!",
+        content: "👋 Hey! I'm Kanwar Robinson. I build production AI systems at AppViewX. Ask me about my work with LangGraph, the MCP Server I published, or any of my projects!",
         timestamp: Date.now()
       };
       setMessages([welcomeMessage]);
@@ -193,7 +193,7 @@ const ChatBot = ({ theme }) => {
     if (window.confirm('Are you sure you want to clear the chat history?')) {
       const welcomeMessage = {
         role: 'assistant',
-        content: "👋 Hi! I'm Kanwar's AI assistant. I can tell you about his experience building production AI systems, his tech stack, projects, or anything else you'd like to know!",
+        content: "👋 Hey! I'm Kanwar Robinson. I build production AI systems at AppViewX. Ask me about my work with LangGraph, the MCP Server I published, or any of my projects!",
         timestamp: Date.now()
       };
       setMessages([welcomeMessage]);
