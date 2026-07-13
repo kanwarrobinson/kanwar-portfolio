@@ -51,6 +51,22 @@ const TerminalChatBot = ({ theme }) => {
     }
   }, [messages, isOpen]);
 
+  useEffect(() => {
+    if (!isOpen) return undefined;
+
+    const handleKeyDown = (event) => {
+      if (event.key === Escape) {
+        setIsOpen(false);
+      }
+    };
+
+    window.addEventListener(keydown, handleKeyDown);
+
+    return () => {
+      window.removeEventListener(keydown, handleKeyDown);
+    };
+  }, [isOpen]);
+
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
