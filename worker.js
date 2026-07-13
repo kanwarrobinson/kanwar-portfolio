@@ -1,3 +1,4 @@
+// Cloudflare Worker for Kanwar's Portfolio - Handles API routes and static assets
 function buildSystemPrompt() {
   return `You are Kanwar Robinson's AI assistant on his portfolio website. Your role is to help visitors learn about Kanwar's background, experience, and skills in a professional yet approachable manner.
 
