@@ -159,10 +159,10 @@ async function handleChatRequest(request, env) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'gpt-4o-mini',
+        model: 'gpt-4o',
         messages: openaiMessages,
-        max_tokens: 500,
-        temperature: 0.7,
+        max_tokens: 1000,
+        temperature: 1,
         stream: true
       })
     });
